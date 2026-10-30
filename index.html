@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VICIO DELICIO | Hamburguesas Artesanales en CDMX - Ordena en Línea</title>
+    <meta name="description" content="Disfruta de las mejores hamburguesas artesanales en la Ciudad de México con Vicio Delicio. Ingredientes frescos, sabor único y el toque perfecto. ¡Ordena en línea ahora!">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- CDN CSS de Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="syles.css">
+
+    <!-- CDN de Bootstrap Icons (Necesario para que aparezca el ícono de Whatsapp) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+    <style>
+        /* Estilos personalizados para imitar la tipografía y diseño del logo */
+        .logo-img {
+            height: 45px;
+            width: auto;
+            mix-blend-mode: multiply;
+            filter: contrast(120%);
+        }
+
+        .logo-text-container {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+            display: inline-flex;
+            flex-direction: column;
+            text-decoration: none;
+        }
+
+        .logo-vicio {
+            color: #b02907;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+        }
+
+        .logo-delicio {
+            color: #FFC107;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+        }
+
+        .logo-line {
+            height: 3px;
+            background-color: #b84124;
+            width: 100%;
+            margin-top: 2px;
+            border-radius: 2px;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .titulo-seccion {
+            border-bottom: 3px solid #ffc107;
+            padding-bottom: 15px;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- 1. NAVBAR DE BOOTSTRAP -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top border-bottom border-warning border-3 shadow-sm">
+        <div class="container">
+            <!-- LOGO E IMAGEN INTEGRADOS EN LA ESQUINA SUPERIOR IZQUIERDA -->
+            <a class="navbar-brand d-flex align-items-center gap-2" href="INDEX.html">
+                <img src="imagenes/logosinletras.jpg" alt="Logo Vicio Delicio" class="logo-img rounded">
+                <div class="logo-text-container">
+                    <span class="logo-vicio">VICIO</span>
+                    <span class="logo-delicio">DELICIO</span>
+                    <div class="logo-line"></div>
+                </div>
+            </a>
+            
+            <!-- Botón para Offcanvas en pantallas pequeñas / móviles -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú normal en desktop -->
+            <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center gap-2">
+                    <li class="nav-item">
+                        <a class="nav-link active fw-bold text-warning" href="INDEX.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="menu.html">Menú</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="sucursales.html">Sucursales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a class="btn btn-danger text-white fw-bold px-3 rounded-pill" href="ordena.html">Ordenar ahora</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. OFFCANVAS (Menú lateral deslizable para móviles) -->
+    <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header border-bottom border-secondary">
+            <h5 class="offcanvas-title d-flex align-items-center gap-2 mb-0" id="offcanvasNavbarLabel">
+                <img src="imagenes/logosinletras.jpg" alt="Logo Vicio Delicio" class="logo-img rounded" style="height: 35px;">
+                <div class="logo-text-container" style="font-size: 0.9rem;">
+                    <span class="logo-vicio" style="font-size: 1rem;">VICIO</span>
+                    <span class="logo-delicio" style="font-size: 1rem;">DELICIO</span>
+                    <div class="logo-line" style="height: 2px;"></div>
+                </div>
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 gap-3">
+                <li class="nav-item">
+                    <a class="nav-link active text-warning fw-bold fs-5" href="INDEX.html">🏠 Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white fs-5" href="menu.html">🍔 Menú</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white fs-5" href="sucursales.html">📍 Sucursales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white fs-5" href="nosotros.html">👥 Nosotros</a>
+                </li>
+                <li class="nav-item mt-3">
+                    <a class="btn btn-danger text-white fw-bold w-100 py-2 rounded-pill fs-5" href="ordena.html">🛒 Ordenar ahora</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <main>
+        <!-- HERO SECTION: CARRUSEL ADAPTADO A TAMAÑO COMPLETO -->
+        <section class="hero-section-full border-bottom">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- Imagen Promocional del Ángel -->
+                    <div class="carousel-item active" data-bs-interval="4000">
+                        <img src="imagenes/Angelquevicio.jpg" class="d-block w-100 hero-carousel-img-full" alt="Hamburguesas Chilangas Vicio Delicio">
+                    </div>
+                    <!-- Segunda Imagen del Menú -->
+                    <div class="carousel-item" data-bs-interval="4000">
+                        <img src="imagenes/Imagen2.jpeg" class="d-block w-100 hero-carousel-img-full" alt="Hamburguesa monumental Vicio Delicio">
+                    </div>
+                    <!-- Tercera Imagen del Menú -->
+                    <div class="carousel-item" data-bs-interval="4000">
+                        <img src="imagenes/Imagen1.jpeg" class="d-block w-100 hero-carousel-img-full" alt="Hamburguesa doble tocino artesanal">
+                    </div>
+                </div>
+
+                <!-- FLECHAS DE NAVEGACIÓN -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- CONTENIDO PRINCIPAL: SOBRE NOSOTROS Y PRODUCTOS DESTACADOS -->
+        <div class="container my-5 py-3">
+            <div class="row g-4 align-items-center mb-5">
+                <div class="col-md-6">
+                    <div class="p-4 bg-white rounded-4 shadow-sm border">
+                        <h2 class="text-danger fw-bold border-bottom border-warning pb-2">Sobre Nosotros</h2>
+                        <p class="text-dark my-3">
+                            En <strong>VICIO DELICIO</strong> nos apasiona crear experiencias gastronómicas memorables. Nuestras hamburguesas están elaboradas con carne 100% de alta calidad e ingredientes seleccionados cuidadosamente.
+                        </p>
+                        <h3 class="h5 mt-4 text-dark fw-bold">¿Por qué elegir VICIO DELICIO?</h3>
+                        <ul class="my-3 p-3 bg-light rounded-3 border-start border-danger border-4 list-unstyled text-dark">
+                            <li class="py-1">✔ Carne 100% de res seleccionada diariamente.</li>
+                            <li class="py-1">✔ Pan artesanal horneado todos los días.</li>
+                            <li class="py-1">✔ Salsas especiales de la casa con receta secreta.</li>
+                            <li class="py-1">✔ Papas a la francesa sazonadas con especias naturales.</li>
+                        </ul>
+                        <a href="nosotros.html" class="btn btn-outline-danger fw-bold mt-2 rounded-pill">Conocer más de nuestra historia</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                        <img src="imagenes/Imagen2.jpeg" class="card-img-top" alt="Food truck y ambiente de Vicio Delicio">
+                        <div class="card-body text-center bg-white">
+                            <p class="card-text fw-bold text-muted m-0">¡Visítanos y vive la experiencia!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ESPECIALIDADES DE LA CASA -->
+            <section class="my-5">
+                <h2 class="text-center text-danger fw-bold mb-4">Especialidades de la Casa</h2>
+                <div class="row g-4">
+                    <!-- Producto 1: La Vicio Clásica -->
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm border-secondary rounded-4 overflow-hidden bg-dark text-white">
+                            <img src="imagenes/vicio-clásica.jpg" class="card-img-top specialty-img" alt="La Vicio Clásica">
+                            <div class="card-body p-4">
+                                <span class="badge bg-danger mb-2">Más Vendida</span>
+                                <h3 class="card-title h5 fw-bold text-white">La Vicio Clásica</h3>
+                                <p class="card-text text-secondary">Carne 150g, queso cheddar, lechuga, jitomate y salsa especial de la casa.</p>
+                                <h4 class="text-danger fw-bold">$130 MXN</h4>
+                            </div>
+                            <div class="card-footer bg-dark border-0 p-4 pt-0">
+                                <button onclick="agregarAlCarrito('La Vicio Clásica', 130)" class="btn btn-danger w-100 fw-bold rounded-pill">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 2: Doble Tocino & BBQ -->
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm border-secondary rounded-4 overflow-hidden bg-dark text-white">
+                            <img src="imagenes/bbq-crunch.jpg" class="card-img-top specialty-img" alt="Doble Tocino & BBQ">
+                            <div class="card-body p-4">
+                                <span class="badge bg-warning text-dark mb-2">Especialidad</span>
+                                <h3 class="card-title h5 fw-bold text-white">Doble Tocino & BBQ</h3>
+                                <p class="card-text text-secondary">Doble carne 300g, doble queso cheddar, tocino crujiente y salsa BBQ especial.</p>
+                                <h4 class="text-danger fw-bold">$180 MXN</h4>
+                            </div>
+                            <div class="card-footer bg-dark border-0 p-4 pt-0">
+                                <button onclick="agregarAlCarrito('Doble Tocino & BBQ', 180)" class="btn btn-danger w-100 fw-bold rounded-pill">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 3: Papas a la Francesa -->
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm border-secondary rounded-4 overflow-hidden bg-dark text-white">
+                            <img src="imagenes/papas-francesas.jpg" class="card-img-top specialty-img" alt="Papas a la Francesa">
+                            <div class="card-body p-4">
+                                <span class="badge bg-success mb-2">Complemento</span>
+                                <h3 class="card-title h5 fw-bold text-white">Papas a la Francesa</h3>
+                                <p class="card-text text-secondary">Papas crujientes sazonadas con especias naturales de la casa.</p>
+                                <h4 class="text-danger fw-bold">$55 MXN</h4>
+                            </div>
+                            <div class="card-footer bg-dark border-0 p-4 pt-0">
+                                <button onclick="agregarAlCarrito('Papas a la Francesa', 55)" class="btn btn-danger w-100 fw-bold rounded-pill">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 3. FOOTER EN 3 COLUMNAS -->
+    <footer class="bg-dark text-white pt-5 pb-4 border-top border-warning border-3">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Columna 1: Marca y Descripción -->
+                <div class="col-md-4">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <img src="imagenes/logosinletras.jpg" alt="Logo Vicio Delicio" class="logo-img rounded" style="height: 35px;">
+                        <div class="logo-text-container" style="font-size: 0.9rem;">
+                            <span class="logo-vicio" style="font-size: 1rem;">VICIO</span>
+                            <span class="logo-delicio" style="font-size: 1rem;">DELICIO</span>
+                            <div class="logo-line" style="height: 2px;"></div>
+                        </div>
+                    </div>
+                    <p class="text-secondary small">
+                        Hamburguesas artesanales elaboradas con carne 100% de res e ingredientes de primera calidad. El verdadero vicio del sabor en cada mordida.
+                    </p>
+                    <div class="d-flex gap-2 mt-3">
+                        <a href="https://www.instagram.com" target="_blank" class="btn btn-outline-warning btn-sm fw-bold">Instagram</a>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Enlaces Rápidos -->
+                <div class="col-md-4">
+                    <h5 class="text-warning fw-bold mb-3">Páginas</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2 small">
+                        <li><a href="INDEX.html" class="text-white text-decoration-none">🏠 Inicio</a></li>
+                        <li><a href="menu.html" class="text-white text-decoration-none">🍔 Menú Artesanal</a></li>
+                        <li><a href="sucursales.html" class="text-white text-decoration-none">📍 Sucursales</a></li>
+                        <li><a href="nosotros.html" class="text-white text-decoration-none">👥 Sobre Nosotros</a></li>
+                        <li><a href="ordena.html" class="text-white text-decoration-none">🛒 Ordenar en Línea</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Contacto -->
+                <div class="col-md-4">
+                    <h5 class="text-warning fw-bold mb-3">Contacto</h5>
+                    <ul class="list-unstyled text-secondary small d-flex flex-column gap-2">
+                        <li>📍 CDMX</li>
+                        <li>📞 +52 55 1234 5678</li>
+                        <li>✉️ ElvicioDelicioso@gmail.com</li>
+                        <li>⏰ Lunes a Domingo: 13:00 - 23:00 hrs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="border-secondary my-4">
+            <div class="text-center text-secondary small">
+                <p class="m-0">&copy; 2026 VICIO DELICIO</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CDN Script JS de Bootstrap 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- SCRIPT PARA GUARDAR EN CARRITO Y REDIRIGIR A ORDENA.HTML -->
+    <script>
+        function agregarAlCarrito(nombre, precio) {
+            let carrito = JSON.parse(localStorage.getItem('carritoVicio')) || [];
+            let productoExistente = carrito.find(p => p.nombre === nombre);
+
+            if (productoExistente) {
+                productoExistente.cantidad += 1;
+            } else {
+                carrito.push({ nombre: nombre, precio: precio, cantidad: 1 });
+            }
+
+            localStorage.setItem('carritoVicio', JSON.stringify(carrito));
+            window.location.href = 'ordena.html';
+        }
+    </script>
+
+<!-- ========================================== -->
+<!-- BOTÓN FLOTANTE DE WHATSAPP - VICIO DELICIO -->
+<!-- ========================================== -->
+<a href="https://wa.me/5215545597864?text=Hola%2C%20me%20gustar%C3%ADa%20hacer%20una%20reservaci%C3%B3n%20y%20conocer%20sobre%20sus%20productos%20y%20servicios." 
+   class="whatsapp-float" 
+   target="_blank" 
+   rel="noopener noreferrer"
+   aria-label="Chatear por WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+</a>
+
+    <style>
+    .whatsapp-float {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        background-color: #25d366;
+        color: #ffffff;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 32px;
+        width: 60px;
+        height: 60px;
+        z-index: 1050;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+    
+    .whatsapp-float:hover {
+        background-color: #20ba5a;
+        color: #ffffff;
+        transform: scale(1.1);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    }
+    </style>
+
+</body>
+</html>

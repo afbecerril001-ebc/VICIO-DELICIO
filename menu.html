@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VICIO DELICIO | Hamburguesas Artesanales</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- CDN CSS de Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="syles.css">
+    
+    <style>
+        /* Estilos personalizados para imitar la tipografía y diseño del logo */
+        .logo-img {
+            height: 45px;
+            width: auto;
+            mix-blend-mode: multiply;
+            filter: contrast(120%);
+        }
+
+        .logo-text-container {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+            display: inline-flex;
+            flex-direction: column;
+            text-decoration: none;
+        }
+
+        .logo-vicio {
+            color: #b02907;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+        }
+
+        .logo-delicio {
+            color: #FFC107;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+        }
+
+        .logo-line {
+            height: 3px;
+            background-color: #b84124;
+            width: 100%;
+            margin-top: 2px;
+            border-radius: 2px;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .producto-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+        }
+
+        .producto-card .card-body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .producto-card .card-footer {
+            margin-top: auto;
+        }
+
+        .titulo-seccion {
+            border-bottom: 3px solid #ffc107;
+            padding-bottom: 15px;
+        }
+
+        @media (max-width: 576px) {
+            .producto-img {
+                height: 200px;
+            }
+        }
+    </style>
+
+  <!-- CDN de Bootstrap Icons (Necesario para que aparezca el ícono de Whatsapp) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body class="bg-light">
+
+    <!-- 1. NAVBAR DE BOOTSTRAP -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top border-bottom border-warning border-3 shadow-sm">
+        <div class="container">
+            <!-- LOGO E IMAGEN INTEGRADOS EN LA ESQUINA SUPERIOR IZQUIERDA -->
+            <a class="navbar-brand d-flex align-items-center gap-2" href="INDEX.html">
+                <img src="imagenes/logosinletras.jpg" alt="Logo Vicio Delicio" class="logo-img rounded">
+                <div class="logo-text-container">
+                    <span class="logo-vicio">VICIO</span>
+                    <span class="logo-delicio">DELICIO</span>
+                    <div class="logo-line"></div>
+                </div>
+            </a>
+            
+            <!-- Botón para Offcanvas en pantallas pequeñas / móviles -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú normal en desktop -->
+            <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center gap-2">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="INDEX.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active fw-bold text-warning" href="menu.html">Menú</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="sucursales.html">Sucursales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a class="btn btn-danger text-white fw-bold px-3 rounded-pill" href="ordena.html">Ordenar ahora</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 3. OFFCANVAS (Menú lateral deslizable para móviles) -->
+    <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header border-bottom border-secondary">
+            <h5 class="offcanvas-title d-flex align-items-center gap-2 mb-0" id="offcanvasNavbarLabel">
+                <img src="logonuevo_2.jpg" alt="Logo Vicio Delicio" class="logo-img rounded" style="height: 35px;">
+                <div class="logo-text-container" style="font-size: 0.9rem;">
+                    <span class="logo-vicio" style="font-size: 1rem;">VICIO</span>
+                    <span class="logo-delicio" style="font-size: 1rem;">DELICIO</span>
+                    <div class="logo-line" style="height: 2px;"></div>
+                </div>
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 gap-3">
+                <li class="nav-item">
+                    <a class="nav-link active text-warning fw-bold fs-5" href="INDEX.html">🏠 Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white fs-5" href="menu.html">🍔 Menú</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white fs-5" href="sucursales.html">📍 Sucursales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white fs-5" href="nosotros.html">👥 Nosotros</a>
+                </li>
+                <li class="nav-item mt-3">
+                    <a class="btn btn-danger text-white fw-bold w-100 py-2 rounded-pill fs-5" href="ordena.html">🛒 Ordenar ahora</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container my-5">
+
+        <!-- ===================================== -->
+        <!-- SECCIÓN 1: HAMBURGUESAS Y COMPLEMENTOS -->
+        <!-- ===================================== -->
+        <section class="bg-white text-dark p-4 p-md-5 rounded shadow-sm border border-warning mb-5">
+            <div class="text-center mb-4">
+                <span class="badge bg-danger mb-3">EL VERDADERO VICIO DEL SABOR</span>
+                <h2 class="text-danger fw-bold titulo-seccion">
+                    NUESTRO MENÚ ARTESANAL
+                </h2>
+                <p class="text-secondary mt-3">
+                    Descubre nuestras especialidades preparadas con ingredientes
+                    seleccionados y mucho cariño. ¡Encuentra tu próximo antojo!
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- HAMBURGUESA 1 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card producto-card h-100 shadow-sm border-0">
+                        <img src="imagenes/vicio-clásica.jpg" class="card-img-top producto-img" alt="Hamburguesa La Vicio Clásica" loading="lazy">
+                        <div class="card-body">
+                            <span class="badge bg-danger mb-2">Más vendida</span>
+                            <h3 class="card-title h5 fw-bold text-danger">La Vicio Clásica</h3>
+                            <p class="card-text text-secondary">
+                                Carne 150g, queso manchego, lechuga, jitomate y salsa de mango.
+                            </p>
+                        </div>
+                        <div class="card-footer bg-white border-0 p-3">
+                            <div class="d-flex justify-content-between align-items-center gap-2">
+                                <span class="fw-bold text-danger fs-5">$130 MXN</span>
+                                <button onclick="agregarAlCarrito('La Vicio Clásica', 130)" class="btn btn-danger fw-bold">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HAMBURGUESA 2 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card producto-card h-100 shadow-sm border-0">
+                        <img src="imagenes/Imagen1.jpeg" class="card-img-top producto-img" alt="Hamburguesa Doble Tocino y BBQ" loading="lazy">
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2">Especialidad</span>
+                            <h3 class="card-title h5 fw-bold text-danger">Doble Tocino &amp; salsa habanera</h3>
+                            <p class="card-text text-secondary">
+                                Doble carne 300g, doble queso manchego, tocino ahumado crujiente y salsa especial.
+                            </p>
+                        </div>
+                        <div class="card-footer bg-white border-0 p-3">
+                            <div class="d-flex justify-content-between align-items-center gap-2">
+                                <span class="fw-bold text-danger fs-5">$180 MXN</span>
+                                <button onclick="agregarAlCarrito('Doble Tocino & BBQ', 180)" class="btn btn-danger fw-bold">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COMPLEMENTO: PAPAS -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card producto-card h-100 shadow-sm border-0">
+                        <img src="imagenes/papas-francesas.jpg" class="card-img-top producto-img" alt="Papas a la francesa crujientes" loading="lazy">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">Complemento</span>
+                            <h3 class="card-title h5 fw-bold text-danger">Papas a la Francesa</h3>
+                            <p class="card-text text-secondary">
+                                Papas crujientes sazonadas con especias naturales
+                                de la casa, ideales para acompañar tu hamburguesa.
+                            </p>
+                        </div>
+                        <div class="card-footer bg-white border-0 p-3">
+                            <div class="d-flex justify-content-between align-items-center gap-2">
+                                <span class="fw-bold text-danger fs-5">$55 MXN</span>
+                                <button onclick="agregarAlCarrito('Papas a la Francesa', 55)" class="btn btn-danger fw-bold">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HAMBURGUESA 3 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card producto-card h-100 shadow-sm border-0">
+                        <img src="imagenes/la-mexicana.jpg" class="card-img-top producto-img" alt="Hamburguesa La Mexicana con guacamole" loading="lazy">
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2">Especialidad</span>
+                            <h3 class="card-title h5 fw-bold text-danger">La Mexicana</h3>
+                            <p class="card-text text-secondary">
+                                Carne de res de 150 g, queso manchego, guacamole y 
+                                jalapeños
+                            </p>
+                        </div>
+                        <div class="card-footer bg-white border-0 p-3">
+                            <div class="d-flex justify-content-between align-items-center gap-2">
+                                <span class="fw-bold text-danger fs-5">$155 MXN</span>
+                                <button onclick="agregarAlCarrito('La Mexicana', 155)" class="btn btn-danger fw-bold">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HAMBURGUESA 4 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card producto-card h-100 shadow-sm border-0">
+                        <img src="imagenes/la-quesosa.jpg" class="card-img-top producto-img" alt="Hamburguesa La Quesosa con cuatro quesos" loading="lazy">
+                        <div class="card-body">
+                            <span class="badge bg-danger mb-2">Amantes del queso</span>
+                            <h3 class="card-title h5 fw-bold text-danger">La Quesosa</h3>
+                            <p class="card-text text-secondary">
+                                Carne de res de 150 g, queso oaxaca, queso manchego,
+                                queso sincho y aderezo cremoso de chipotle.
+                            </p>
+                        </div>
+                        <div class="card-footer bg-white border-0 p-3">
+                            <div class="d-flex justify-content-between align-items-center gap-2">
+                                <span class="fw-bold text-danger fs-5">$160 MXN</span>
+                                <button onclick="agregarAlCarrito('La Quesosa', 160)" class="btn btn-danger fw-bold">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HAMBURGUESA 5 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card producto-card h-100 shadow-sm border-0">
+                        <img src="imagenes/bbq-crunch.jpg" class="card-img-top producto-img" alt="Hamburguesa BBQ Crunch con aros de cebolla" loading="lazy">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">Sabor especial</span>
+                            <h3 class="card-title h5 fw-bold text-danger">La HABANERO Crunch</h3>
+                            <p class="card-text text-secondary">
+                                Carne de res de 150 g, queso sincho, aros de
+                                cebolla crujientes, tocino y salsa HABANERO.
+                            </p>
+                        </div>
+                        <div class="card-footer bg-white border-0 p-3">
+                            <div class="d-flex justify-content-between align-items-center gap-2">
+                                <span class="fw-bold text-danger fs-5">$165 MXN</span>
+                                <button onclick="agregarAlCarrito('La BBQ Crunch', 165)" class="btn btn-danger fw-bold">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HAMBURGUESA 6 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card producto-card h-100 shadow-sm border-0">
+                        <img src="imagenes/vicio-extrema.jpg" class="card-img-top producto-img" alt="Hamburguesa La Vicio Extrema con doble carne" loading="lazy">
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2">Especial de la casa</span>
+                            <h3 class="card-title h5 fw-bold text-danger">La Vicio Extrema</h3>
+                            <p class="card-text text-secondary">
+                                Doble carne de res, queso manchego, tocino,
+                                cebolla caramelizada y la salsa que tu prefieras (chipotle, habanero, dulce, jalapeño).
+                            </p>
+                        </div>
+                        <div class="card-footer bg-white border-0 p-3">
+                            <div class="d-flex justify-content-between align-items-center gap-2">
+                                <span class="fw-bold text-danger fs-5">$195 MXN</span>
+                                <button onclick="agregarAlCarrito('La Vicio Extrema', 195)" class="btn btn-danger fw-bold">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================== -->
+        <!-- SECCIÓN 2: BEBIDAS Y COMPLEMENTOS -->
+        <!-- ===================================== -->
+        <section class="bg-white text-dark p-4 p-md-5 rounded shadow-sm border mb-5">
+            <div class="text-center mb-4">
+                <span class="badge bg-warning text-dark mb-2">ACOMPAÑA TU ANTOJO</span>
+                <h2 class="text-danger fw-bold titulo-seccion">
+                    BEBIDAS Y COMPLEMENTOS
+                </h2>
+                <p class="text-secondary mt-3">
+                    Completa tu experiencia con nuestras opciones para acompañar
+                    tus hamburguesas favoritas.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- BEBIDA 1 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card producto-card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <span class="badge bg-danger mb-2">Bebida</span>
+                            <h3 class="card-title h5 fw-bold text-danger">Refrescos de lata</h3>
+                            <p class="card-text text-secondary">Presentación de 355 ml.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0 p-3">
+                            <div class="d-flex justify-content-between align-items-center gap-2">
+                                <span class="fw-bold text-danger fs-5">$35 MXN</span>
+                                <button onclick="agregarAlCarrito('Refrescos de lata', 35)" class="btn btn-danger fw-bold">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BEBIDA 2 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card producto-card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">Natural</span>
+                            <h3 class="card-title h5 fw-bold text-danger">Agua de horchata</h3>
+                            <p class="card-text text-secondary">
+                                Una opción refrescante para acompañar tu comida.
+                            </p>
+                        </div>
+                        <div class="card-footer bg-white border-0 p-3">
+                            <div class="d-flex justify-content-between align-items-center gap-2">
+                                <span class="fw-bold text-danger fs-5">$30 MXN</span>
+                                <button onclick="agregarAlCarrito('Agua de horchata', 30)" class="btn btn-danger fw-bold">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COMPLEMENTO 2 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card producto-card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2">Extra</span>
+                            <h3 class="card-title h5 fw-bold text-danger">Salsas artesanales EXTRA</h3>
+                            <p class="card-text text-secondary">
+                                Dale un toque especial a tu hamburguesa.
+                            </p>
+                        </div>
+                        <div class="card-footer bg-white border-0 p-3">
+                            <div class="d-flex justify-content-between align-items-center gap-2">
+                                <span class="fw-bold text-danger fs-5">$15 MXN</span>
+                                <button onclick="agregarAlCarrito('Salsas artesanales', 15)" class="btn btn-danger fw-bold">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BEBIDA 3 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card producto-card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <span class="badge bg-danger mb-2">Natural</span>
+                            <h3 class="card-title h5 fw-bold text-danger">Agua de jamaica</h3>
+                            <p class="card-text text-secondary">
+                                Agua hecha con flor de jamaica natural de campo
+                                Presentación de 500 ml.
+                            </p>
+                        </div>
+                        <div class="card-footer bg-white border-0 p-3">
+                            <div class="d-flex justify-content-between align-items-center gap-2">
+                                <span class="fw-bold text-danger fs-5">$40 MXN</span>
+                                <button onclick="agregarAlCarrito('Agua de jamaica', 40)" class="btn btn-danger fw-bold">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BEBIDA 4 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card producto-card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2">Refrescante</span>
+                            <h3 class="card-title h5 fw-bold text-danger">Tepache</h3>
+                            <p class="card-text text-secondary">
+                                 Bebida fermentada mexicana de maíz y frutas.
+                                Presentación de 500 ml.
+                            </p>
+                        </div>
+                        <div class="card-footer bg-white border-0 p-3">
+                            <div class="d-flex justify-content-between align-items-center gap-2">
+                                <span class="fw-bold text-danger fs-5">$38 MXN</span>
+                                <button onclick="agregarAlCarrito('Tepache', 38)" class="btn btn-danger fw-bold">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BEBIDA 5 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card producto-card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">Especialidad</span>
+                            <h3 class="card-title h5 fw-bold text-danger">Chamoyada de mango con chamoy</h3>
+                            <p class="card-text text-secondary">
+                                Cremosa y refrescante bebida de mango.
+                            </p>
+                        </div>
+                        <div class="card-footer bg-white border-0 p-3">
+                            <div class="d-flex justify-content-between align-items-center gap-2">
+                                <span class="fw-bold text-danger fs-5">$65 MXN</span>
+                                <button onclick="agregarAlCarrito('Chamoyada de mango con chamoy', 65)" class="btn btn-danger fw-bold">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BEBIDA 6 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card producto-card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2">Frutal</span>
+                            <h3 class="card-title h5 fw-bold text-danger">Limonada de fresa</h3>
+                            <p class="card-text text-secondary">
+                                Limonada con un toque dulce de fresa,
+                                servida bien fría.
+                            </p>
+                        </div>
+                        <div class="card-footer bg-white border-0 p-3">
+                            <div class="d-flex justify-content-between align-items-center gap-2">
+                                <span class="fw-bold text-danger fs-5">$45 MXN</span>
+                                <button onclick="agregarAlCarrito('Limonada de fresa', 45)" class="btn btn-danger fw-bold">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================== -->
+        <!-- SECCIÓN 3: POSTRES -->
+        <!-- ===================================== -->
+        <section class="bg-white text-dark p-4 p-md-5 rounded shadow-sm border border-warning mb-5">
+            <div class="text-center mb-4">
+                <span class="badge bg-danger mb-2">UN TOQUE DULCE</span>
+                <h2 class="text-danger fw-bold titulo-seccion">
+                    NUESTROS POSTRES
+                </h2>
+                <p class="text-secondary mt-3">
+                    Termina tu experiencia con algo dulce y delicioso.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- POSTRE 1 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card producto-card h-100 shadow-sm border-0">
+                        <img src="imagenes/brownie.jpg" class="card-img-top producto-img" alt="Brownie de chocolate" loading="lazy">
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2">Favorito</span>
+                            <h3 class="card-title h5 fw-bold text-danger">Brownie de chocolate</h3>
+                            <p class="card-text text-secondary">
+                                Delicioso brownie con intenso sabor a chocolate.
+                            </p>
+                        </div>
+                        <div class="card-footer bg-white border-0 p-3">
+                            <div class="d-flex justify-content-between align-items-center gap-2">
+                                <span class="fw-bold text-danger fs-5">$55 MXN</span>
+                                <button onclick="agregarAlCarrito('Brownie de chocolate', 55)" class="btn btn-danger fw-bold">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POSTRE 2 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card producto-card h-100 shadow-sm border-0">
+                        <img src="imagenes/helado.jpg" class="card-img-top producto-img" alt="Helado" loading="lazy">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">Refrescante</span>
+                            <h3 class="card-title h5 fw-bold text-danger">Helado</h3>
+                            <p class="card-text text-secondary">
+                                Una opción dulce y refrescante para acompañar tu comida.
+                            </p>
+                        </div>
+                        <div class="card-footer bg-white border-0 p-3">
+                            <div class="d-flex justify-content-between align-items-center gap-2">
+                                <span class="fw-bold text-danger fs-5">$45 MXN</span>
+                                <button onclick="agregarAlCarrito('Helado', 45)" class="btn btn-danger fw-bold">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POSTRE 3 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card producto-card h-100 shadow-sm border-0">
+                        <img src="imagenes/pay.jpg" class="card-img-top producto-img" alt="Rebanada de pay" loading="lazy">
+                        <div class="card-body">
+                            <span class="badge bg-danger mb-2">Dulce antojo</span>
+                            <h3 class="card-title h5 fw-bold text-danger">Pay del día</h3>
+                            <p class="card-text text-secondary">
+                                Una rebanada de pay para cerrar tu comida con algo dulce.
+                            </p>
+                        </div>
+                        <div class="card-footer bg-white border-0 p-3">
+                            <div class="d-flex justify-content-between align-items-center gap-2">
+                                <span class="fw-bold text-danger fs-5">$60 MXN</span>
+                                <button onclick="agregarAlCarrito('Pay del día', 60)" class="btn btn-danger fw-bold">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POSTRE 4 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card producto-card h-100 shadow-sm border-0">
+                        <img src="imagenes/cheesecake.jpg" class="card-img-top producto-img" alt="Cheesecake de frutos rojos" loading="lazy">
+                        <div class="card-body">
+                            <span class="badge bg-danger mb-2">Especialidad</span>
+                            <h3 class="card-title h5 fw-bold text-danger">Cheesecake de frutos rojos</h3>
+                            <p class="card-text text-secondary">
+                                Cremoso pastel de queso con una deliciosa
+                                cubierta de frutos rojos.
+                            </p>
+                        </div>
+                        <div class="card-footer bg-white border-0 p-3">
+                            <div class="d-flex justify-content-between align-items-center gap-2">
+                                <span class="fw-bold text-danger fs-5">$75 MXN</span>
+                                <button onclick="agregarAlCarrito('Cheesecake de frutos rojos', 75)" class="btn btn-danger fw-bold">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POSTRE 5 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card producto-card h-100 shadow-sm border-0">
+                        <img src="imagenes/brownie-helado.jpg" class="card-img-top producto-img" alt="Brownie con helado de vainilla" loading="lazy">
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2">Favorito</span>
+                            <h3 class="card-title h5 fw-bold text-danger">Brownie con helado</h3>
+                            <p class="card-text text-secondary">
+                                Brownie de chocolate acompañado de una
+                                bola de helado de vainilla.
+                            </p>
+                        </div>
+                        <div class="card-footer bg-white border-0 p-3">
+                            <div class="d-flex justify-content-between align-items-center gap-2">
+                                <span class="fw-bold text-danger fs-5">$85 MXN</span>
+                                <button onclick="agregarAlCarrito('Brownie con helado', 85)" class="btn btn-danger fw-bold">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POSTRE 6 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card producto-card h-100 shadow-sm border-0">
+                        <img src="imagenes/galletas.jpg" class="card-img-top producto-img" alt="Galletas con chispas de chocolate" loading="lazy">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">Recién horneadas</span>
+                            <h3 class="card-title h5 fw-bold text-danger">Galletas con chocolate</h3>
+                            <p class="card-text text-secondary">
+                                Galletas suaves con chispas de chocolate,
+                                ideales para acompañar tu bebida favorita.
+                            </p>
+                        </div>
+                        <div class="card-footer bg-white border-0 p-3">
+                            <div class="d-flex justify-content-between align-items-center gap-2">
+                                <span class="fw-bold text-danger fs-5">$45 MXN</span>
+                                <button onclick="agregarAlCarrito('Galletas con chocolate', 45)" class="btn btn-danger fw-bold">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+ <!-- 3. FOOTER EN 3 COLUMNAS EN TODAS LAS PÁGINAS -->
+<footer class="bg-dark text-white pt-5 pb-4 border-top border-warning border-3">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Columna 1: Marca y Descripción -->
+            <div class="col-md-4">
+                <div class="d-flex align-items-center gap-2 mb-3">
+                    <img src="imagenes/logosinletras.jpg" alt="Logo Vicio Delicio" class="logo-img rounded" style="height: 35px;">
+                    <div class="logo-text-container" style="font-size: 0.9rem;">
+                        <span class="logo-vicio" style="font-size: 1rem;">VICIO</span>
+                        <span class="logo-delicio" style="font-size: 1rem;">DELICIO</span>
+                        <div class="logo-line" style="height: 2px;"></div>
+                    </div>
+                </div>
+                <p class="text-secondary small">
+                    Hamburguesas artesanales elaboradas con carne 100% de res e ingredientes de primera calidad. El verdadero vicio del sabor en cada mordida.
+                </p>
+                <div class="d-flex gap-2 mt-3">
+                    <a href="https://www.instagram.com" target="_blank" class="btn btn-outline-warning btn-sm fw-bold">Instagram</a>
+                </div>
+            </div>
+
+            <!-- Columna 2: Enlaces Rápidos -->
+            <div class="col-md-4">
+                <h5 class="text-warning fw-bold mb-3">Páginas</h5>
+                <ul class="list-unstyled d-flex flex-column gap-2 small">
+                    <li><a href="INDEX.html" class="text-white text-decoration-none">🏠 Inicio</a></li>
+                    <li><a href="menu.html" class="text-white text-decoration-none">🍔 Menú Artesanal</a></li>
+                    <li><a href="sucursales.html" class="text-white text-decoration-none">📍 Sucursales</a></li>
+                    <li><a href="nosotros.html" class="text-white text-decoration-none">👥 Sobre Nosotros</a></li>
+                    <li><a href="ordena.html" class="text-white text-decoration-none">🛒 Ordenar en Línea</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: Contacto -->
+            <div class="col-md-4">
+                <h5 class="text-warning fw-bold mb-3">Contacto</h5>
+                <ul class="list-unstyled text-secondary small d-flex flex-column gap-2">
+                    <li>📍 CDMX</li>
+                    <li>📞 +52 55 1234 5678</li>
+                    <li>✉️ ElvicioDelicioso@gmail.com</li>
+                    <li>⏰ Lunes a Domingo: 13:00 - 23:00 hrs</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="border-secondary my-4">
+        <div class="text-center text-secondary small">
+            <p class="m-0">&copy; 2026 VICIO DELICIO</p>
+        </div>
+    </div>
+</footer>
+
+    <!-- CDN Script JS de Bootstrap 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    <!-- CDN Script JS de Bootstrap 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- SCRIPT PARA GUARDAR PRODUCTOS EN EL CARRITO Y REDIRIGIR -->
+    <script>
+        function agregarAlCarrito(nombre, precio) {
+            let carrito = JSON.parse(localStorage.getItem('carritoVicio')) || [];
+            let productoExistente = carrito.find(p => p.nombre === nombre);
+
+            if (productoExistente) {
+                productoExistente.cantidad += 1;
+            } else {
+                carrito.push({ nombre: nombre, precio: precio, cantidad: 1 });
+            }
+
+            localStorage.setItem('carritoVicio', JSON.stringify(carrito));
+            window.location.href = 'ordena.html';
+        }
+    </script>
+<!-- ========================================== -->
+<!-- BOTÓN FLOTANTE DE WHATSAPP - VICIO DELICIO -->
+<!-- ========================================== -->
+<a href="https://wa.me/5215545597864?text=Hola%2C%20me%20gustar%C3%ADa%20hacer%20una%20reservaci%C3%B3n%20y%20conocer%20sobre%20sus%20productos%20y%20servicios." 
+   class="whatsapp-float" 
+   target="_blank" 
+   rel="noopener noreferrer"
+   aria-label="Chatear por WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+</a>
+
+    <style>
+    .whatsapp-float {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        background-color: #25d366;
+        color: #ffffff;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 32px;
+        width: 60px;
+        height: 60px;
+        z-index: 1050;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+    
+    .whatsapp-float:hover {
+        background-color: #20ba5a;
+        color: #ffffff;
+        transform: scale(1.1);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    }
+    </style>
+
+</body>
+</html>

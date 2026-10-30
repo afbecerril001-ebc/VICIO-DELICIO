@@ -1,0 +1,228 @@
+/* 1. Estilo general de la página */
+body {
+font-family: 'Open Sans', sans-serif;
+background-color: #000000;
+color: #e6dada;
+padding: 1px;
+line-height: 1.6;
+}
+
+/* 2. Encabezado principal */
+header {
+color: #FFFFFF;
+padding: 30px 25px;
+margin-bottom: 30px;
+text-align: center;
+border: 2px solid #8B0000;
+border-radius: 8px;
+}
+
+/* 3. Navegación */
+nav {
+margin-top: 20px;
+padding: 10px;
+}
+
+nav a {
+display: inline-block;
+margin: 0 10px;
+padding: 8px 15px;
+}
+
+/* 4. Títulos principales */
+h1 {
+font-family: 'Montserrat', sans-serif;
+font-size: 2rem;
+font-weight: 800;
+margin: 0 0 15px 0;
+padding: 5px 0;
+}
+
+h2 {
+font-family: 'Montserrat', sans-serif;
+font-size: 1.5rem;
+color: #FFC107;
+margin: 35px 0 20px 0;
+padding: 0 0 8px 10px;
+border-bottom: 2px solid hwb(45 3% 0%);
+}
+
+h3 {
+font-family: 'Montserrat', sans-serif;
+font-size: 1.2rem;
+color: #FFC107;
+margin: 20px 0 10px 0;
+padding: 5px 0;
+}
+
+/* 5. Secciones principales */
+section {
+background-color: #ffffff;
+margin: 30px 0;
+padding: 25px;
+border: 1px solid #333333;
+border-radius: 8px;
+}
+
+/* 6. Banner principal / carrusel */
+.banner,
+.carousel {
+margin: 0 0 30px 0;
+padding: 0;
+border: 3px solid #FFC107;
+border-radius: 8px;
+overflow: hidden;
+}
+
+/* 7. Frase memorable */
+blockquote {
+margin: 30px 0;
+padding: 25px 30px;
+background-color: #111111;
+color: #FFC107;
+¡
+border-radius: 6px;
+font-family: 'Montserrat', sans-serif;
+font-weight: 700;
+}
+
+/* 8. Enlaces e imágenes */
+a {
+color: #FFC107;
+font-weight: bold;
+text-decoration: none;
+margin-right: 10px;
+}
+
+a {
+text-decoration: underline;
+color: #FFFFFF;
+}
+
+img {
+max-width: 100%;
+height: auto;
+margin: 15px 0;
+padding: 3px;
+border: 1px solid #333333;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* 9. Listas */
+ul {
+background-color: #111111;
+margin: 20px 0;
+padding: 20px 20px 20px 40px;
+border: 1px solid #333333;
+border-radius: 5px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+li {
+margin-bottom: 10px;
+padding: 5px;
+}
+
+li {
+margin-bottom: 0;
+}
+
+/* 10. Tarjetas del menú */
+article {
+background-color: #111111;
+margin: 20px 0;
+padding: 20px;
+border: 1px solid #333333;
+border-radius: 8px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+article h3 {
+margin-top: 0;
+}
+
+/* 11. Estilos de la tabla */
+table {
+width: 100%;
+border-collapse: collapse;
+background-color: #111111;
+margin: 25px 0;
+border: 1px solid #333333;
+border-radius: 6px;
+overflow: hidden;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+th,
+td {
+padding: 14px 15px;
+margin: 0;
+text-align: left;
+border-bottom: 1px solid #333333;
+}
+
+th {
+background-color: #8B0000;
+color: #FFFFFF;
+font-family: 'Montserrat', sans-serif;
+text-transform: uppercase;
+padding: 15px;
+border-bottom: 3px solid #FFC107;
+}
+
+td {
+padding: 13px 15px;
+}
+
+tr(even) {
+background-color: #181818;
+}
+
+tr td {
+border-bottom: none;
+}
+
+/* 12. Sucursales */
+.sucursales {
+margin: 30px 0;
+padding: 25px;
+background-color: #111111;
+border: 2px solid #8B0000;
+border-radius: 8px;
+}
+
+/* 13. Sobre nosotros */
+.sobre-nosotros {
+margin: 30px 0;
+padding: 30px;
+background-color: #111111;
+border-top: 4px solid #FFC107;
+border-bottom: 1px solid #333333;
+border-radius: 8px;
+}
+
+/* 14. Pie de página */
+footer {
+background-color: #8B0000;
+color: #FFFFFF;
+margin-top: 40px;
+padding: 30px 25px;
+text-align: center;
+border-top: 5px solid #FFC107;
+border-radius: 8px;
+}
+
+footer a {
+color: #FFFFFF;
+display: inline-block;
+margin: 8px 12px;
+padding: 8px 12px;
+border: 1px solid #FFC107;
+border-radius: 5px;
+}
+
+footer a {
+color: #FFC107;
+text-decoration: none;
+}

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VICIO DELICIO | Sucursales</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- CDN CSS de Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="syles.css">
+    
+    <style>
+        /* Estilos personalizados para imitar la tipografía y diseño del logo */
+        .logo-img {
+            height: 45px;
+            width: auto;
+            mix-blend-mode: multiply;
+            filter: contrast(120%);
+        }
+
+        .logo-text-container {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+            display: inline-flex;
+            flex-direction: column;
+            text-decoration: none;
+        }
+
+        .logo-vicio {
+            color: #b02907;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+        }
+
+        .logo-delicio {
+            color: #FFC107;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+        }
+
+        .logo-line {
+            height: 3px;
+            background-color: #b84124;
+            width: 100%;
+            margin-top: 2px;
+            border-radius: 2px;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .titulo-seccion {
+            border-bottom: 3px solid #ffc107;
+            padding-bottom: 15px;
+        }
+
+        .card-sucursal {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-sucursal:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12) !important;
+        }
+
+        /* Mapa en la parte superior de la tarjeta (como una foto) */
+        .mapa-sucursal {
+            width: 100%;
+            height: 220px;
+            border-bottom: 3px solid #ffc107;
+        }
+
+        .mapa-sucursal iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+    </style>
+<!-- CDN de Bootstrap Icons (Necesario para que aparezca el ícono de Whatsapp) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+</head>
+<body class="bg-light">
+
+    <!-- 1. NAVBAR DE BOOTSTRAP -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top border-bottom border-warning border-3 shadow-sm">
+        <div class="container">
+            <!-- LOGO E IMAGEN INTEGRADOS EN LA ESQUINA SUPERIOR IZQUIERDA -->
+            <a class="navbar-brand d-flex align-items-center gap-2" href="INDEX.html">
+                <img src="imagenes/logosinletras.jpg" alt="Logo Vicio Delicio" class="logo-img rounded">
+                <div class="logo-text-container">
+                    <span class="logo-vicio">VICIO</span>
+                    <span class="logo-delicio">DELICIO</span>
+                    <div class="logo-line"></div>
+                </div>
+            </a>
+            
+            <!-- Botón para Offcanvas en pantallas pequeñas / móviles -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú normal en desktop -->
+            <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center gap-2">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="INDEX.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="menu.html">Menú</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active fw-bold text-warning" href="sucursales.html">Sucursales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a class="btn btn-danger text-white fw-bold px-3 rounded-pill" href="ordena.html">Ordenar ahora</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. OFFCANVAS (Menú lateral deslizable para móviles) -->
+    <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header border-bottom border-secondary">
+            <h5 class="offcanvas-title d-flex align-items-center gap-2 mb-0" id="offcanvasNavbarLabel">
+                <img src="logonuevo_2.jpg" alt="Logo Vicio Delicio" class="logo-img rounded" style="height: 35px;">
+                <div class="logo-text-container" style="font-size: 0.9rem;">
+                    <span class="logo-vicio" style="font-size: 1rem;">VICIO</span>
+                    <span class="logo-delicio" style="font-size: 1rem;">DELICIO</span>
+                    <div class="logo-line" style="height: 2px;"></div>
+                </div>
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 gap-3">
+                <li class="nav-item">
+                    <a class="nav-link text-white fs-5" href="INDEX.html">🏠 Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white fs-5" href="menu.html">🍔 Menú</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active text-warning fw-bold fs-5" href="sucursales.html">📍 Sucursales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white fs-5" href="nosotros.html">👥 Nosotros</a>
+                </li>
+                <li class="nav-item mt-3">
+                    <a class="btn btn-danger text-white fw-bold w-100 py-2 rounded-pill fs-5" href="ordena.html">🛒 Ordenar ahora</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container my-5">
+        
+        <!-- ENCABEZADO DE SECCIÓN -->
+        <div class="text-center mb-5">
+            <span class="badge bg-danger mb-2 px-3 py-2 text-uppercase">Encuéntranos cerca de ti</span>
+            <h1 class="text-danger fw-bold titulo-seccion">NUESTRAS SUCURSALES</h1>
+            <p class="text-secondary mt-3 fs-5">Visítanos y vive la experiencia del auténtico sabor artesanal en cualquiera de nuestras ubicaciones.</p>
+        </div>
+
+        <!-- LISTA DE SUCURSALES -->
+        <section aria-label="Ubicaciones de nuestras sucursales" class="row g-4 justify-content-center">
+
+            <!-- SUCURSAL 1 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="card card-sucursal h-100 bg-white shadow-sm border border-warning rounded-4 overflow-hidden text-center">
+
+                    <!-- MAPA EN LUGAR DE FOTO -->
+                    <div class="mapa-sucursal">
+                        <iframe
+                            src="https://www.google.com/maps?q=Av.+Insurgentes+Sur+1450,+CDMX&output=embed"
+                            title="Mapa de Vicio Delicio Insurgentes"
+                            loading="lazy"
+                            allowfullscreen
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+
+                    <div class="card-body p-4 d-flex flex-column">
+                        <span class="badge bg-danger align-self-center mb-3 px-3 py-2">CDMX - SUR</span>
+                        <h3 class="fw-bold text-danger fs-4 mb-2">INSURGENTES</h3>
+                        <address class="fst-normal text-secondary mb-4">
+                            <p class="fw-bold text-dark mb-1">🍔 VICIO DELICIO – INSURGENTES</p>
+                            <p class="small text-uppercase mb-2">Av. Insurgentes Sur 1450, CDMX.</p>
+                            <p class="small text-muted mb-0">⏰ Lunes a Domingo: 13:00 - 23:00 hrs</p>
+                        </address>
+                        <div class="mt-auto d-flex flex-column gap-2">
+                            <a href="https://maps.google.com/?q=Av.+Insurgentes+Sur+1450,+CDMX" target="_blank" rel="noopener" class="btn btn-outline-danger fw-bold rounded-pill w-100">
+                                📍 Ver en Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- SUCURSAL 2 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="card card-sucursal h-100 bg-white shadow-sm border border-warning rounded-4 overflow-hidden text-center">
+
+                    <!-- MAPA EN LUGAR DE FOTO -->
+                    <div class="mapa-sucursal">
+                        <iframe
+                            src="https://www.google.com/maps?q=Av.+Miguel+Angel+de+Quevedo+825,+Coyoacan,+CDMX&output=embed"
+                            title="Mapa de Vicio Delicio Coyoacán"
+                            loading="lazy"
+                            allowfullscreen
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+
+                    <div class="card-body p-4 d-flex flex-column">
+                        <span class="badge bg-warning text-dark align-self-center mb-3 px-3 py-2">CDMX - SUR</span>
+                        <h3 class="fw-bold text-danger fs-4 mb-2">COYOACÁN</h3>
+                        <address class="fst-normal text-secondary mb-4">
+                            <p class="fw-bold text-dark mb-1">🍔 VICIO DELICIO – COYOACÁN</p>
+                            <p class="small text-uppercase mb-2">Av. Miguel Ángel de Quevedo 825, Coyoacán, CDMX.</p>
+                            <p class="small text-muted mb-0">⏰ Lunes a Domingo: 13:00 - 23:00 hrs</p>
+                        </address>
+                        <div class="mt-auto d-flex flex-column gap-2">
+                            <a href="https://maps.google.com/?q=Av.+Miguel+Angel+de+Quevedo+825,+Coyoacan,+CDMX" target="_blank" rel="noopener" class="btn btn-outline-danger fw-bold rounded-pill w-100">
+                                📍 Ver en Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- SUCURSAL 3 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="card card-sucursal h-100 bg-white shadow-sm border border-warning rounded-4 overflow-hidden text-center">
+
+                    <!-- MAPA EN LUGAR DE FOTO -->
+                    <div class="mapa-sucursal">
+                        <iframe
+                            src="https://www.google.com/maps?q=Av.+Ejercito+Nacional+520,+Polanco,+CDMX&output=embed"
+                            title="Mapa de Vicio Delicio Polanco"
+                            loading="lazy"
+                            allowfullscreen
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+
+                    <div class="card-body p-4 d-flex flex-column">
+                        <span class="badge bg-danger align-self-center mb-3 px-3 py-2">CDMX - PONIENTE</span>
+                        <h3 class="fw-bold text-danger fs-4 mb-2">POLANCO</h3>
+                        <address class="fst-normal text-secondary mb-4">
+                            <p class="fw-bold text-dark mb-1">🍔 VICIO DELICIO – POLANCO</p>
+                            <p class="small text-uppercase mb-2">Av. Ejército Nacional 520, Polanco, CDMX.</p>
+                            <p class="small text-muted mb-0">⏰ Lunes a Domingo: 13:00 - 23:00 hrs</p>
+                        </address>
+                        <div class="mt-auto d-flex flex-column gap-2">
+                            <a href="https://maps.google.com/?q=Av.+Ejercito+Nacional+520,+Polanco,+CDMX" target="_blank" rel="noopener" class="btn btn-outline-danger fw-bold rounded-pill w-100">
+                                📍 Ver en Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- 3. FOOTER EN 3 COLUMNAS EN TODAS LAS PÁGINAS -->
+    <footer class="bg-dark text-white pt-5 pb-4 border-top border-warning border-3">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Columna 1: Marca y Descripción -->
+                <div class="col-md-4">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <img src="imagenes/logosinletras.jpg" alt="Logo Vicio Delicio" class="logo-img rounded" style="height: 35px;">
+                        <div class="logo-text-container" style="font-size: 0.9rem;">
+                            <span class="logo-vicio" style="font-size: 1rem;">VICIO</span>
+                            <span class="logo-delicio" style="font-size: 1rem;">DELICIO</span>
+                            <div class="logo-line" style="height: 2px;"></div>
+                        </div>
+                    </div>
+                    <p class="text-secondary small">
+                        Hamburguesas artesanales elaboradas con carne 100% de res e ingredientes de primera calidad. El verdadero vicio del sabor en cada mordida.
+                    </p>
+                    <div class="d-flex gap-2 mt-3">
+                        <a href="https://www.instagram.com" target="_blank" class="btn btn-outline-warning btn-sm fw-bold">Instagram</a>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Enlaces Rápidos -->
+                <div class="col-md-4">
+                    <h5 class="text-warning fw-bold mb-3">Páginas</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2 small">
+                        <li><a href="INDEX.html" class="text-white text-decoration-none">🏠 Inicio</a></li>
+                        <li><a href="menu.html" class="text-white text-decoration-none">🍔 Menú Artesanal</a></li>
+                        <li><a href="sucursales.html" class="text-white text-decoration-none">📍 Sucursales</a></li>
+                        <li><a href="nosotros.html" class="text-white text-decoration-none">👥 Sobre Nosotros</a></li>
+                        <li><a href="ordena.html" class="text-white text-decoration-none">🛒 Ordenar en Línea</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Contacto -->
+                <div class="col-md-4">
+                    <h5 class="text-warning fw-bold mb-3">Contacto</h5>
+                    <ul class="list-unstyled text-secondary small d-flex flex-column gap-2">
+                        <li>📍 CDMX</li>
+                        <li>📞 +52 55 1234 5678</li>
+                        <li>✉️ ElvicioDelicioso@gmail.com</li>
+                        <li>⏰ Lunes a Domingo: 13:00 - 23:00 hrs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="border-secondary my-4">
+            <div class="text-center text-secondary small">
+                <p class="m-0">&copy; 2026 VICIO DELICIO</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CDN Script JS de Bootstrap 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ========================================== -->
+<!-- BOTÓN FLOTANTE DE WHATSAPP - VICIO DELICIO -->
+<!-- ========================================== -->
+<a href="https://wa.me/5215545597864?text=Hola%2C%20me%20gustar%C3%ADa%20hacer%20una%20reservaci%C3%B3n%20y%20conocer%20sobre%20sus%20productos%20y%20servicios." 
+   class="whatsapp-float" 
+   target="_blank" 
+   rel="noopener noreferrer"
+   aria-label="Chatear por WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+</a>
+
+    <style>
+    .whatsapp-float {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        background-color: #25d366;
+        color: #ffffff;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 32px;
+        width: 60px;
+        height: 60px;
+        z-index: 1050;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+    
+    .whatsapp-float:hover {
+        background-color: #20ba5a;
+        color: #ffffff;
+        transform: scale(1.1);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    }
+    </style>
+
+</body>
+</html>

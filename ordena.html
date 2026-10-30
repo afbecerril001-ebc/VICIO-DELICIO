@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VICIO DELICIO | Ordenar en Línea</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- CDN CSS de Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="syles.css">
+    
+    <style>
+        .logo-img {
+            height: 45px;
+            width: auto;
+            mix-blend-mode: multiply;
+            filter: contrast(120%);
+        }
+
+        .logo-text-container {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+            display: inline-flex;
+            flex-direction: column;
+            text-decoration: none;
+        }
+
+        .logo-vicio {
+            color: #b02907;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+        }
+
+        .logo-delicio {
+            color: #FFC107;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+        }
+
+        .logo-line {
+            height: 3px;
+            background-color: #b84124;
+            width: 100%;
+            margin-top: 2px;
+            border-radius: 2px;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .titulo-seccion {
+            border-bottom: 3px solid #ffc107;
+            padding-bottom: 15px;
+        }
+    </style>
+
+    <!-- CDN de Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body class="bg-light">
+
+    <!-- 1. NAVBAR DE BOOTSTRAP -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top border-bottom border-warning border-3 shadow-sm">
+        <div class="container">
+            <!-- LOGO E IMAGEN INTEGRADOS -->
+            <a class="navbar-brand d-flex align-items-center gap-2" href="INDEX.html">
+                <img src="imagenes/logosinletras.jpg" alt="Logo Vicio Delicio" class="logo-img rounded">
+                <div class="logo-text-container">
+                    <span class="logo-vicio">VICIO</span>
+                    <span class="logo-delicio">DELICIO</span>
+                    <div class="logo-line"></div>
+                </div>
+            </a>
+            
+            <!-- Botón para Offcanvas en móviles -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú desktop -->
+            <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center gap-2">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="INDEX.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="menu.html">Menú</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="sucursales.html">Sucursales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a class="btn btn-danger text-white fw-bold px-3 rounded-pill" href="ordena.html">Ordenar ahora</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. OFFCANVAS (Menú lateral para móviles) -->
+    <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header border-bottom border-secondary">
+            <h5 class="offcanvas-title d-flex align-items-center gap-2 mb-0" id="offcanvasNavbarLabel">
+                <img src="logonuevo_2.jpg" alt="Logo Vicio Delicio" class="logo-img rounded" style="height: 35px;">
+                <div class="logo-text-container" style="font-size: 0.9rem;">
+                    <span class="logo-vicio" style="font-size: 1rem;">VICIO</span>
+                    <span class="logo-delicio" style="font-size: 1rem;">DELICIO</span>
+                    <div class="logo-line" style="height: 2px;"></div>
+                </div>
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 gap-3">
+                <li class="nav-item">
+                    <a class="nav-link text-white fs-5" href="INDEX.html">🏠 Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white fs-5" href="menu.html">🍔 Menú</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white fs-5" href="sucursales.html">📍 Sucursales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white fs-5" href="nosotros.html">👥 Nosotros</a>
+                </li>
+                <li class="nav-item mt-3">
+                    <a class="btn btn-danger text-white fw-bold w-100 py-2 rounded-pill fs-5" href="ordena.html">🛒 Ordenar ahora</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container my-5">
+        <div class="text-center mb-5">
+            <span class="badge bg-danger mb-2 px-3 py-2 text-uppercase">Finaliza tu antojo</span>
+            <h1 class="text-danger fw-bold titulo-seccion">ORDENA EN LÍNEA</h1>
+            <p class="text-secondary mt-3">Revisa los productos de tu pedido y llena tus datos para recibir tu orden en caliente.</p>
+        </div>
+
+        <div class="row g-4">
+            
+            <!-- COLUMNA IZQUIERDA: RESUMEN Y DETALLE DEL CARRITO -->
+            <div class="col-lg-7">
+                <div class="card bg-white shadow-sm border border-warning p-4 rounded-4">
+                    <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom border-warning">
+                        <h2 class="text-danger fw-bold fs-4 m-0">🛒 Tu Carrito de Compra</h2>
+                        <button class="btn btn-outline-danger btn-sm fw-bold rounded-pill" onclick="vaciarCarrito()">
+                            🗑️ Vaciar
+                        </button>
+                    </div>
+
+                    <!-- Lista de productos añadidos dinámicamente -->
+                    <div id="contenedor-carrito">
+                        <!-- Se renderiza desde JS -->
+                    </div>
+
+                    <!-- Totales -->
+                    <div class="mt-4 pt-3 border-top border-secondary-subtle">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="text-muted fw-semibold">Subtotal:</span>
+                            <span class="text-dark fw-bold" id="subtotal-precio">$0.00 MXN</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="text-muted fw-semibold">IVA (16%):</span>
+                            <span class="text-dark fw-bold" id="iva-precio">$0.00 MXN</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                            <h4 class="fw-bold text-dark m-0">Total a pagar:</h4>
+                            <h3 class="fw-bold text-danger m-0" id="total-precio">$0.00 MXN</h3>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <a href="menu.html" class="btn btn-outline-dark fw-bold rounded-pill w-100">
+                            ➕ Agregar más productos del menú
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUMNA DERECHA: FORMULARIO DE ENTREGA -->
+            <div class="col-lg-5">
+                <div class="card bg-dark text-white shadow-sm border border-secondary p-4 rounded-4">
+                    <h3 class="text-warning fw-bold mb-3 border-bottom border-secondary pb-2">📋 Datos de Entrega</h3>
+                    
+                    <form id="form-pedido" onsubmit="validarYProcederPago(event)" novalidate>
+                        <div class="mb-3">
+                            <label for="nombreCliente" class="form-label text-light fw-bold">Nombre Completo</label>
+                            <input type="text" class="form-control" id="nombreCliente" placeholder="Ej: Pedro Sola">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="direccionCliente" class="form-label text-light fw-bold">Dirección de Entrega</label>
+                            <input type="text" class="form-control" id="direccionCliente" placeholder="Calle, número, colonia, CDMX">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="telefonoCliente" class="form-label text-light fw-bold">Teléfono de contacto</label>
+                            <input type="tel" class="form-control" id="telefonoCliente" placeholder="+52 55 1234 5678">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="notasPedido" class="form-label text-light fw-bold">Notas del pedido (opcional)</label>
+                            <textarea class="form-control" id="notasPedido" rows="2" placeholder="Ej: Sin cebolla, extra salsa, timbrar en el int. 4"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-danger w-100 py-3 fw-bold fs-5 rounded-pill mt-3 shadow">
+                            💳 Proceder al Pago
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- MODAL EMERGENTE PARA PAGO CON TARJETA -->
+    <div class="modal fade" id="modalPagoTarjeta" tabindex="-1" aria-labelledby="modalPagoTarjetaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-white border border-warning shadow-lg rounded-4">
+                <div class="modal-header border-bottom border-secondary">
+                    <h5 class="modal-title text-warning fw-bold" id="modalPagoTarjetaLabel">💳 Datos de Tarjeta</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="form-tarjeta" onsubmit="enviarPedidoFinal(event)">
+                        <div class="mb-3">
+                            <label for="numeroTarjeta" class="form-label text-light fw-semibold">Número de Tarjeta</label>
+                            <input type="text" class="form-control" id="numeroTarjeta" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="vencimientoTarjeta" class="form-label text-light fw-semibold">Vencimiento</label>
+                                <input type="text" class="form-control" id="vencimientoTarjeta" placeholder="MM/AA" maxlength="5" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="cvvTarjeta" class="form-label text-light fw-semibold">CVV</label>
+                                <input type="password" class="form-control" id="cvvTarjeta" placeholder="123" maxlength="4" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="titularTarjeta" class="form-label text-light fw-semibold">Nombre del Titular</label>
+                            <input type="text" class="form-control" id="titularTarjeta" placeholder="Como aparece en la tarjeta" required>
+                        </div>
+                        <button type="submit" id="btn-enviar-pedido" class="btn btn-warning w-100 py-2 fw-bold text-dark rounded-pill mt-2">
+                            ✅ Confirmar y Enviar Pedido
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white pt-5 pb-4 border-top border-warning border-3">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <img src="imagenes/logosinletras.jpg" alt="Logo Vicio Delicio" class="logo-img rounded" style="height: 35px;">
+                        <div class="logo-text-container" style="font-size: 0.9rem;">
+                            <span class="logo-vicio" style="font-size: 1rem;">VICIO</span>
+                            <span class="logo-delicio" style="font-size: 1rem;">DELICIO</span>
+                            <div class="logo-line" style="height: 2px;"></div>
+                        </div>
+                    </div>
+                    <p class="text-secondary small">
+                        Hamburguesas artesanales elaboradas con carne 100% de res e ingredientes de primera calidad. El verdadero vicio del sabor en cada mordida.
+                    </p>
+                    <div class="d-flex gap-2 mt-3">
+                        <a href="https://www.instagram.com" target="_blank" class="btn btn-outline-warning btn-sm fw-bold">Instagram</a>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <h5 class="text-warning fw-bold mb-3">Páginas</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2 small">
+                        <li><a href="INDEX.html" class="text-white text-decoration-none">🏠 Inicio</a></li>
+                        <li><a href="menu.html" class="text-white text-decoration-none">🍔 Menú Artesanal</a></li>
+                        <li><a href="sucursales.html" class="text-white text-decoration-none">📍 Sucursales</a></li>
+                        <li><a href="nosotros.html" class="text-white text-decoration-none">👥 Sobre Nosotros</a></li>
+                        <li><a href="ordena.html" class="text-white text-decoration-none">🛒 Ordenar en Línea</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <h5 class="text-warning fw-bold mb-3">Contacto</h5>
+                    <ul class="list-unstyled text-secondary small d-flex flex-column gap-2">
+                        <li>📍 CDMX </li>
+                        <li>📞 +52 55 1234 5678</li>
+                        <li>✉️ ElvicioDelicioso@gmail.com</li>
+                        <li>⏰ Lunes a Domingo: 13:00 - 23:00 hrs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="border-secondary my-4">
+            <div class="text-center text-secondary small">
+                <p class="m-0">&copy; 2026 VICIO DELICIO</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CDN Script JS de Bootstrap 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JAVA SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            mostrarCarrito();
+            cargarDatosFormulario();
+            configurarPersistenciaFormulario();
+        });
+
+        // 1. LÓGICA PARA AGREGAR PRODUCTOS SIN DUPLICAR
+        function agregarAlCarrito(nombre, precio) {
+            let carrito = JSON.parse(localStorage.getItem('carritoVicio')) || [];
+            let index = carrito.findIndex(item => item.nombre === nombre);
+
+            if (index !== -1) {
+                carrito[index].cantidad += 1;
+            } else {
+                carrito.push({
+                    nombre: nombre,
+                    precio: precio,
+                    cantidad: 1
+                });
+            }
+
+            localStorage.setItem('carritoVicio', JSON.stringify(carrito));
+            mostrarCarrito();
+        }
+
+        // 2. RENDERIZADO Y GESTIÓN DEL CARRITO EN PANTALLA
+        function mostrarCarrito() {
+            let carrito = JSON.parse(localStorage.getItem('carritoVicio')) || [];
+            let contenedor = document.getElementById('contenedor-carrito');
+            let subtotalElemento = document.getElementById('subtotal-precio');
+            let ivaElemento = document.getElementById('iva-precio');
+            let totalElemento = document.getElementById('total-precio');
+
+            contenedor.innerHTML = '';
+
+            if (carrito.length === 0) {
+                contenedor.innerHTML = `
+                    <div class="text-center py-5">
+                        <p class="fs-5 text-muted mb-3">Tu carrito está vacío 🍔</p>
+                        <a href="menu.html" class="btn btn-danger fw-bold rounded-pill px-4">Ir a elegir al menú</a>
+                    </div>
+                `;
+                subtotalElemento.innerText = '$0.00 MXN';
+                ivaElemento.innerText = '$0.00 MXN';
+                totalElemento.innerText = '$0.00 MXN';
+                return;
+            }
+
+            let subtotal = 0;
+
+            carrito.forEach((item, index) => {
+                let itemSubtotal = item.precio * item.cantidad;
+                subtotal += itemSubtotal;
+
+                contenedor.innerHTML += `
+                    <div class="d-flex justify-content-between align-items-center py-3 border-bottom">
+                        <div>
+                            <h5 class="fw-bold text-dark mb-1">${item.nombre}</h5>
+                            <span class="text-muted">$${item.precio} MXN c/u</span>
+                        </div>
+                        
+                        <div class="d-flex align-items-center gap-2">
+                            <button class="btn btn-sm btn-outline-danger fw-bold px-2 py-0 fs-5" onclick="cambiarCantidad(${index}, -1)">-</button>
+                            <span class="fw-bold fs-6 px-1">${item.cantidad}</span>
+                            <button class="btn btn-sm btn-outline-danger fw-bold px-2 py-0 fs-5" onclick="cambiarCantidad(${index}, 1)">+</button>
+                            <span class="fw-bold text-danger ms-3 fs-6">$${itemSubtotal} MXN</span>
+                        </div>
+                    </div>
+                `;
+            });
+
+            let iva = subtotal * 0.16;
+            let total = subtotal + iva;
+
+            subtotalElemento.innerText = `$${subtotal.toFixed(2)} MXN`;
+            ivaElemento.innerText = `$${iva.toFixed(2)} MXN`;
+            totalElemento.innerText = `$${total.toFixed(2)} MXN`;
+        }
+
+        function cambiarCantidad(index, cambio) {
+            let carrito = JSON.parse(localStorage.getItem('carritoVicio')) || [];
+            carrito[index].cantidad += cambio;
+
+            if (carrito[index].cantidad <= 0) {
+                carrito.splice(index, 1);
+            }
+
+            localStorage.setItem('carritoVicio', JSON.stringify(carrito));
+            mostrarCarrito();
+        }
+
+        function vaciarCarrito() {
+            localStorage.removeItem('carritoVicio');
+            mostrarCarrito();
+        }
+
+        // 3. PERSISTENCIA DE DATOS DEL FORMULARIO
+        function configurarPersistenciaFormulario() {
+            const campos = ['nombreCliente', 'direccionCliente', 'telefonoCliente', 'notasPedido'];
+            campos.forEach(id => {
+                const input = document.getElementById(id);
+                if (input) {
+                    input.addEventListener('input', () => {
+                        localStorage.setItem(`vicio_${id}`, input.value);
+                    });
+                }
+            });
+        }
+
+        function cargarDatosFormulario() {
+            const campos = ['nombreCliente', 'direccionCliente', 'telefonoCliente', 'notasPedido'];
+            campos.forEach(id => {
+                const valorGuardado = localStorage.getItem(`vicio_${id}`);
+                if (valorGuardado) {
+                    const input = document.getElementById(id);
+                    if (input) input.value = valorGuardado;
+                }
+            });
+        }
+
+        function limpiarDatosFormulario() {
+            const campos = ['nombreCliente', 'direccionCliente', 'telefonoCliente', 'notasPedido'];
+            campos.forEach(id => {
+                localStorage.removeItem(`vicio_${id}`);
+            });
+        }
+
+        // 4. VALIDACIÓN PREVIA AL PAGO
+        function validarYProcederPago(e) {
+            e.preventDefault();
+            let carrito = JSON.parse(localStorage.getItem('carritoVicio')) || [];
+
+            if (carrito.length === 0) {
+                alert('⚠️ No hay platillos seleccionados en tu carrito. Por favor elige productos del menú primero.');
+                window.location.href = 'menu.html';
+                return;
+            }
+
+            let nombre = document.getElementById('nombreCliente').value.trim();
+            let direccion = document.getElementById('direccionCliente').value.trim();
+            let telefono = document.getElementById('telefonoCliente').value.trim();
+
+            if (!nombre) {
+                alert('⚠️ Falta completar un dato obligatorio: Por favor ingresa tu Nombre Completo.');
+                document.getElementById('nombreCliente').focus();
+                return;
+            }
+
+            if (!direccion) {
+                alert('⚠️ Falta completar un dato obligatorio: Por favor ingresa tu Dirección de Entrega.');
+                document.getElementById('direccionCliente').focus();
+                return;
+            }
+
+            if (!telefono) {
+                alert('⚠️ Falta completar un dato obligatorio: Por favor ingresa tu Teléfono de Contacto.');
+                document.getElementById('telefonoCliente').focus();
+                return;
+            }
+
+            let modalPago = new bootstrap.Modal(document.getElementById('modalPagoTarjeta'));
+            modalPago.show();
+        }
+
+        // 5. ENVÍO FINAL DEL PEDIDO A FORMSPREE
+        async function enviarPedidoFinal(e) {
+            e.preventDefault();
+            let carrito = JSON.parse(localStorage.getItem('carritoVicio')) || [];
+
+            let nombre = document.getElementById('nombreCliente').value.trim();
+            let direccion = document.getElementById('direccionCliente').value.trim();
+            let telefono = document.getElementById('telefonoCliente').value.trim();
+            let notas = document.getElementById('notasPedido').value.trim() || 'Ninguna';
+
+            // Generar el desglose detallado de los productos para enviarlo en texto limpio a Formspree
+            let detalleProductos = "";
+            let subtotal = 0;
+            
+            carrito.forEach(item => {
+                let itemSubtotal = item.precio * item.cantidad;
+                subtotal += itemSubtotal;
+                detalleProductos += `• ${item.cantidad}x ${item.nombre} ($${item.precio} c/u) = $${itemSubtotal} MXN\n`;
+            });
+
+            let iva = subtotal * 0.16;
+            let total = subtotal + iva;
+
+            // Construir el mensaje completo que llegará a tu correo mediante Formspree
+            let mensajeFormspree = `¡NUEVO PEDIDO EN VICIO DELICIO! 🍔\n\n` +
+                `CLIENTE:\n` +
+                `- Nombre: ${nombre}\n` +
+                `- Dirección: ${direccion}\n` +
+                `- Teléfono: ${telefono}\n` +
+                `- Notas: ${notas}\n\n` +
+                `DETALLE DEL PEDIDO:\n${detalleProductos}\n` +
+                `RESUMEN DE PAGO:\n` +
+                `- Subtotal: $${subtotal.toFixed(2)} MXN\n` +
+                `- IVA (16%): $${iva.toFixed(2)} MXN\n` +
+                `- TOTAL PAGADO CON TARJETA: $${total.toFixed(2)} MXN`;
+
+            // Preparar el botón con estado de carga
+            const btnEnviar = document.getElementById('btn-enviar-pedido');
+            btnEnviar.disabled = true;
+            btnEnviar.innerText = 'Enviando pedido... ⏳';
+
+            try {
+                // Petición fetch a tu enlace de Formspree
+                let respuesta = await fetch("https://formspree.io/f/mrpplrnn", {
+                    method: "POST",
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name: nombre,
+                        phone: telefono,
+                        address: direccion,
+                        message: mensajeFormspree,
+                        _subject: `🍔 Nuevo Pedido de ${nombre} - Vicio Delicio`
+                    })
+                });
+
+                if (respuesta.ok) {
+                    alert('🎉 ¡Pedido enviado con éxito! Recibirás los detalles de tu orden por correo y la cocina comenzará a prepararla.');
+                    
+                    // Limpieza de datos
+                    localStorage.removeItem('carritoVicio');
+                    limpiarDatosFormulario();
+
+                    // Recargar la página para reiniciar el estado
+                    location.reload();
+                } else {
+                    alert('Hubo un problema al enviar tu pedido. Por favor intenta de nuevo.');
+                    btnEnviar.disabled = false;
+                    btnEnviar.innerText = '✅ Confirmar y Enviar Pedido';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error de conexión. Revisa tu red e intenta de nuevo.');
+                btnEnviar.disabled = false;
+                btnEnviar.innerText = '✅ Confirmar y Enviar Pedido';
+            }
+        }
+    </script>
+
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <a href="https://wa.me/5215545597864?text=Hola%2C%20me%20gustar%C3%ADa%20hacer%20una%20reservaci%C3%B3n%20y%20conocer%20sobre%20sus%20productos%20y%20servicios." 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Chatear por WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <style>
+    .whatsapp-float {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        background-color: #25d366;
+        color: #ffffff;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 32px;
+        width: 60px;
+        height: 60px;
+        z-index: 1050;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+    
+    .whatsapp-float:hover {
+        background-color: #20ba5a;
+        color: #ffffff;
+        transform: scale(1.1);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    }
+    </style>
+
+</body>
+</html>
